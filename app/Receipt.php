@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Receipt extends Model {
     
-    protected $table = 'receipt';
+    protected $table = 'receipts';
     /**
      * The attributes that are mass assignable.
      *

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateLogTable extends Migration
      */
     public function up()
     {
-        Schema::create('log', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
             $table->unsignedBigInteger('user_id')->default(null);

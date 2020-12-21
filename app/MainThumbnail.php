@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MainThumbnail extends Model
+class Thumbnail extends Model
 {
-    protected $table = 'main_thumbnail';
+    protected $table = 'thumbnails';
     /**
      * The attributes that are mass assignable.
      *

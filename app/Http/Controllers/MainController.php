@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MainThumbnail;
+use App\Thumbnail;
 use App\Education;
 use App\Notice;
 use App\UShop;
@@ -11,7 +11,7 @@ use App\News;
 
 class MainController extends Controller {
     public function main() {
-        $mainThumbnailList = MainThumbnail::where('is_show',0)->orderBy('order', 'asc')->get();
+        $mainThumbnailList = Thumbnail::where('is_show',0)->orderBy('order', 'asc')->get();
 
         
         $educationList = Education::where('is_show',0)->orderByDesc('created_at')->limit('8')->get();

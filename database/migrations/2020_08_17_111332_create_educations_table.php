@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUshopTable extends Migration
+class CreateEducationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateUshopTable extends Migration
      */
     public function up()
     {
-        Schema::create('ushop', function (Blueprint $table) {
-            $table->id();
+        Schema::create('educations', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('thumbnail')->commnet('썸네일');
-            $table->string('title',100)->commnet('제목');
+            $table->string('title')->commnet('제목');
+            $table->string('subtitle')->commnet('부제목');
             $table->text('body')->commnet('내용');
-            $table->string('href')->commnet('페이지 링크');
             $table->string('uploadfile')->nullable()->commnet('업로드 파일명');
             $table->string('filename')->nullable()->commnet('실제 파일명');
-            $table->unsignedBigInteger('user_id')->default(null)->comment('작성자');
-            $table->foreign('user_id')->references('id')->on('users'); 
+            $table->integer('recruitment_personnel')->coomment('모집인원');
+            $table->dateTime('start_date')->comment('모집 시작');
+            $table->dateTime('end_date')->comment('모집 마감');
+            $table->integer('number_of_hits')->default(0)->coomment('조회수');
             $table->tinyInteger('is_show')->default(0)->commnet('공개 여부');
-            $table->integer('hits')->default(0)->commnet('조회수');
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateUshopTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ushop');
+        Schema::dropIfExists('education');
     }
 }

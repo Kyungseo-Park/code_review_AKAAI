@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class UShop extends Model
 {
-    protected $table = 'ushop';
+    protected $table = 'ushops';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id','thumbnail', 'title', 'href', 'body', 'uploadfile', 'filename', 'user_id', 'is_show', 'hits', 'created_at', 'updated_at'
+        '*'
     ];
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admins;
 
 use App\Http\Controllers\Controller;
-use App\MainThumbnail;
+use App\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\User;
@@ -65,7 +65,7 @@ class adminController extends Controller
     // 썸네일 List 
     public function thumbnailList() {
         
-        $mainThumbnailList = MainThumbnail::where('is_show', 0)->orderByDesc('order')->orderByDesc('created_at')->get();
+        $mainThumbnailList = Thumbnail::where('is_show', 0)->orderByDesc('order')->orderByDesc('created_at')->get();
         return view('admins/thumbnail/list', compact('mainThumbnailList'));
     }
 
@@ -86,17 +86,17 @@ class adminController extends Controller
         
         // 중간에 우선순위가 추가될 경우 
         $order = $request->order;
-        $originOrders = MainThumbnail::where('order', '>=', $order)->get();
+        $originOrders = Thumbnail::where('order', '>=', $order)->get();
 
         foreach($originOrders as $originOrder) {
-            MainThumbnail::where('id', $originOrder->id)->update([
+            Thumbnail::where('id', $originOrder->id)->update([
                 'order' => $order+1
             ]);
 
             $order++;
         }
             
-        MainThumbnail::create([
+        Thumbnail::create([
             'title'         => $request->title,
             'subtitle'      => $request->subtitle,
             'button'        => $request->button,
@@ -113,22 +113,22 @@ class adminController extends Controller
     }
 
     public function thumbnailState($id) {
-        $mainThumbnailId = MainThumbnail::where('id', $id)->first();
+        $mainThumbnailId = Thumbnail::where('id', $id)->first();
         
         // 공개글을 비공개로  
         if($mainThumbnailId->is_show == 0){
             // order보다 값이 큰 것들
             $order = $mainThumbnailId->order;                                   // 선택된 값의 order
-            $hightOrders = MainThumbnail::where('order', '>', $order)->get();   // 삭제될 값보다 큰 값을 선택 
+            $hightOrders = Thumbnail::where('order', '>', $order)->get();   // 삭제될 값보다 큰 값을 선택 
             foreach($hightOrders as $hightOrder) {
-                MainThumbnail::where('id', $hightOrder->id)->update([
+                Thumbnail::where('id', $hightOrder->id)->update([
                     'order' => $order
                 ]);
                 $order = $order + 1;
             }
 
             // 삭제될 값을 비공개 상태로 전환 
-            MainThumbnail::where('id', $id)->update([
+            Thumbnail::where('id', $id)->update([
                 'is_show' => 1,
                 'order' => NULL
             ]);
@@ -139,16 +139,16 @@ class adminController extends Controller
         // 비공개글을 공개로 
         }else if($mainThumbnailId->is_show == 1){
             // 현재 공개중인 값의 가장 큰 수를 찾음 
-            $originOrder = MainThumbnail::where('is_show', 0)->OrderByDesc('order')->first();
+            $originOrder = Thumbnail::where('is_show', 0)->OrderByDesc('order')->first();
             // dd($originOrder->order);
 
             if($originOrder == NULL){
                 $orderPoint = 1;
             } else {
                 $order = 1;
-                $hightOrders = MainThumbnail::where('order', '>=', $order)->get();   // 삭제될 값보다 큰 값을 선택 
+                $hightOrders = Thumbnail::where('order', '>=', $order)->get();   // 삭제될 값보다 큰 값을 선택 
                 foreach($hightOrders as $hightOrder) {
-                    MainThumbnail::where('id', $hightOrder->id)->update([
+                    Thumbnail::where('id', $hightOrder->id)->update([
                         'order' => $order
                     ]);
                     $order = $order + 1;
@@ -156,7 +156,7 @@ class adminController extends Controller
             }
             
             // 현재 값을 마지막 순위로 이동 
-            MainThumbnail::where('id', $id)->update([
+            Thumbnail::where('id', $id)->update([
                 'is_show' => 0,
                 'order' => 1
             ]);
@@ -170,8 +170,8 @@ class adminController extends Controller
 
     public function thumbnailPost(Request $request) {
 
-        $old_order = MainThumbnail::where('id', $request->id)->first();
-        $another_id = MainThumbnail::where('order', $request->order)->first();
+        $old_order = Thumbnail::where('id', $request->id)->first();
+        $another_id = Thumbnail::where('order', $request->order)->first();
 
         // 변경사항이 있나?
         if($old_order->order == $request->order) {
@@ -179,7 +179,7 @@ class adminController extends Controller
 
         // 다른 애랑 켭치나?
         } else if($another_id->order == $request->order) {
-            MainThumbnail::where('id', $another_id->id)->update([
+            Thumbnail::where('id', $another_id->id)->update([
                 'order' => $request->order + 1
             ]);
 
@@ -206,7 +206,7 @@ class adminController extends Controller
         }
 
 
-        MainThumbnail::where('id', $request->id)->update([
+        Thumbnail::where('id', $request->id)->update([
             'title' => $request->title,
             'subtitle' => $request->subtitle,
             'button' => $request->button,
@@ -222,7 +222,7 @@ class adminController extends Controller
     }
 
     public function delete() {
-        $mainThumbnailList = MainThumbnail::where('is_show', 1)->orderByDesc('order')->orderByDesc('created_at')->get();
+        $mainThumbnailList = Thumbnail::where('is_show', 1)->orderByDesc('order')->orderByDesc('created_at')->get();
         return view('admins/thumbnail/delete', compact('mainThumbnailList'));
     }
 }

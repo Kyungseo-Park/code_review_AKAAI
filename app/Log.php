@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Log extends Model
 {
-    protected $table = 'log';
+    protected $table = 'logs';
     /**
      * The attributes that are mass assignable.
      *

@@ -15,8 +15,9 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('post_type')->comment('게시판 타입');
-            $table->bigInteger('post_id')->comment('게시판 번호');
+            $table->unsignedBigInteger('post_type_id')->comment('외래키 : 게시글 타입');
+            $table->foreign('post_type_id')->references('id')->on('types');
+            $table->bigInteger('post_id')->comment('외래키 같은 기본키 : 게시판 번호');
             $table->unsignedBigInteger('user_id')->comment('작성자');
             $table->foreign('user_id')->references('id')->on('users'); 
             $table->string('comment')->comment('작성 댓글');
