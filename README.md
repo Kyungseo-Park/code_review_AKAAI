@@ -31,7 +31,7 @@ DB_PASSWORD=password    // user password
 ```
 ### CMD or TERMINAL
 ```bash
-$ php artisan migrate 
+$ php artisan migrate:refresh --seed
 $ php artisan serve
 ```
 
