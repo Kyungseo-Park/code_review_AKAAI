@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class adminController extends Controller
 {
 
-    public function login() {
-        
-            
+    public function login() {   
         if(Auth::check()) {
             return view('admins/dashboard');
         }
@@ -23,19 +21,16 @@ class adminController extends Controller
     }
 
     public function loginForm(Request $request ) {
-
-        $user = User::where('email', $request->email)->first();     // 하나 나오고
+        $user = User::where('email', $request->email)->first();
 
         if($user != null) {
             if(decrypt($user->password) == $request->password) {
-                
                 Auth::login($user);
                 return redirect("admin")->with('success', '로그인 되었습니다.');    
             }
 
             return redirect("admin")->with('warning', '입력하신 비밀번호가 잘못되었습니다.');    
         } else {
-
             return redirect("admin")->with('warning', '없는 계정입니다.');    
         }
     }
@@ -51,7 +46,6 @@ class adminController extends Controller
     public function register(Request $request) {
         $naver_id = Str::random();
         
-
         $newUser = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -79,7 +73,6 @@ class adminController extends Controller
     public function thumbnailCreate(Request $request) {
         
         $insertFire = array();
-        // $state_img = array("pc_", "tablet_", "molile_", 'default_');
         $state_img = array('default_');
         $i = 0;
         foreach($request->file('src_img') as $file) {
@@ -89,9 +82,6 @@ class adminController extends Controller
             $i++;
         }
 
-        // $src_pc         = $insertFire[0]['path'].$insertFire[0]['fake_name'];
-        // $src_tablet     = $insertFire[1]['path'].$insertFire[1]['fake_name'];
-        // $src_mobile     = $insertFire[2]['path'].$insertFire[2]['fake_name'];
         $src_default    = $insertFire[0]['path'].$insertFire[0]['fake_name'];
         
         // 중간에 우선순위가 추가될 경우 

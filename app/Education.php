@@ -27,6 +27,7 @@ class Education extends Model
     // 생성, 업데이트 추가 활성화 
     public $timestamps = true;
 
+    
     public function getEducationId() {
         return $this->hasMany('App\Receipt', 'education_id', 'id');
     }

@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', 'MainController@main');
-// 교육/세미나
+Route::get('/', 'MainController@main');         // 교육/세미나
 Route::get('education.scn', 'educationController@list');
 Route::get('education/{id}', 'educationController@show')->name('education.show.scn');
 Route::post('education/receipt', 'educationController@receipt')->name('education.receipt');
@@ -23,7 +22,6 @@ Route::get('map.scn', 'mapController@list');
 
 // 로그인 
 Route::get('login.scn', 'loginController@view');
-// Route::post('login.scn', 'loginController@login')->name('login');
 Route::post('auth/logout', 'Auth\loginController@logout')->name('auth.logout');
 Route::get('auth/naver', 'Auth\loginController@redirectToProviderNaver')->name('auth.naver');
 Route::get('auth/naver/callback', 'Auth\loginController@handleProviderCallbackNaver');
@@ -32,11 +30,11 @@ Route::get('auth/naver/callback', 'Auth\loginController@handleProviderCallbackNa
 Route::get('/mypage.scn', 'userController@view');
 
 
-Route::get('/private.scn', 'userController@private');
-Route::get('/admin', 'Admins\adminController@login');       // 로그인
-Route::post('/admin', 'Admins\adminController@loginForm')->name('login');       // 로그인
-Route::get('/register', 'Admins\adminController@registerView');       // 로그인
-Route::post('/register', 'Admins\adminController@register')->name('register');       // 로그인
+Route::get('/private.scn', 'userController@private');                           // 개인정보약관
+Route::get('/admin', 'Admins\adminController@login');                           // 로그인 View
+Route::post('/admin', 'Admins\adminController@loginForm')->name('login');       // 로그인 Post
+Route::get('/register', 'Admins\adminController@registerView');                 // 회원가입 View
+Route::post('/register', 'Admins\adminController@register')->name('register');  // 회원가입 Post
 
 // 관리 페이지 
 Route::group(['middleware' => 'isAdmin'], function () {

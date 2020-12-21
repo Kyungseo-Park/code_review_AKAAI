@@ -32,6 +32,7 @@
         </div>
     </div>
 </div>
+
 <div class="container mb-3">
     <div class="row justify-content-start">
         <h4>1. 개인정보의 처리 목적</h4>
@@ -39,7 +40,7 @@
     <div class="row justify-content-start">
         <div class="col-12">
             <p style="margin-bottom: 2px;">
-                <서일 캠퍼스타운>(‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 ’) 은(는) 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는
+                <서일 캠퍼스타운>(‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 ’) 은(는) 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는
                     이용하지 않습니다.
             </p>
             <p style="margin-bottom: 2px;">- 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리 등
@@ -53,7 +54,7 @@
     </div>
     <div class="row justify-content-start">
         <div class="col-12">
-            <p style="margin-bottom: 2px;">① <서일 캠퍼스타운>(‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 ’) 은(는) 정보주체로부터 개인정보를
+            <p style="margin-bottom: 2px;">① <서일 캠퍼스타운>(‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 ’) 은(는) 정보주체로부터 개인정보를
                     수집할 때 동의 받은 개인정보 보유․이용기간 또는 법령에 따른 개인정보 보유․이용기간 내에서 개인정보를 처리․보유합니다.</p>
             <p style="margin-bottom: 2px;">② 구체적인 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
             <p style="margin-bottom: 2px;"> ☞ 아래 예시를 참고하여 개인정보 처리업무와 개인정보 처리업무에 대한 보유기간 및 관련 법령, 근거 등을 기재합니다.</p>
@@ -67,7 +68,7 @@
     </div>
     <div class="row justify-content-start">
         <div class="col-12">
-            <p style="margin-bottom: 2px;">① 정보주체는서일 캠퍼스타운 (‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 ) 에 대해 언제든지 다음 각
+            <p style="margin-bottom: 2px;">① 정보주체는서일 캠퍼스타운 (‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 ) 에 대해 언제든지 다음 각
                 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.</p>
             <p style="margin-bottom: 2px;">1. 개인정보 열람요구</p>
             <p style="margin-bottom: 2px;">2. 오류 등이 있을 경우 정정 요구</p>
@@ -82,7 +83,7 @@
     </div>
     <div class="row justify-content-start">
         <div class="col-12">
-            <p style="margin-bottom: 2px;">① <서일 캠퍼스타운>('https://www.seoilstartup.kr/'이하 '서일 캠퍼스타운 ' )은(는) 다음의 개인정보 항목을
+            <p style="margin-bottom: 2px;">① <서일 캠퍼스타운>('http://localhost:8000/'이하 '서일 캠퍼스타운 ' )은(는) 다음의 개인정보 항목을
                     처리하고 있습니다.</p>
             <p style="margin-bottom: 2px;">1<회원정보>
             </p>
@@ -133,7 +134,7 @@
     </div>
     <div class="row justify-content-start">
         <div class="col-12">
-            <p style="margin-bottom: 2px;">①서일 캠퍼스타운 (‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 ) 은(는) 개인정보 처리에 관한 업무를
+            <p style="margin-bottom: 2px;">①서일 캠퍼스타운 (‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 ) 은(는) 개인정보 처리에 관한 업무를
                 총괄해서
                 책임지고, 개인정보 처리와 관련한 정보주체의
                 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
@@ -149,10 +150,10 @@
             <p style="margin-bottom: 2px;">▶ 개인정보 보호책임자</p>
             <p style="margin-bottom: 2px;">성명 :김현식</p>
             <p style="margin-bottom: 2px;">이메일 : hskim@seoil.ac.kr</p>
-            <p style="margin-bottom: 2px;">② 정보주체께서는서일 캠퍼스타운 (‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 ) 의 서비스(또는 사업)을
+            <p style="margin-bottom: 2px;">② 정보주체께서는서일 캠퍼스타운 (‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 ) 의 서비스(또는 사업)을
                 이용하시면서
                 발생한 모든 개인정보 보호 관련 문의,
-                불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다.서일 캠퍼스타운 (‘https://www.seoilstartup.kr/’이하 ‘서일 캠퍼스타운 )
+                불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다.서일 캠퍼스타운 (‘http://localhost:8000/’이하 ‘서일 캠퍼스타운 )
                 은(는) 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.</p>
         </div>
     </div>
