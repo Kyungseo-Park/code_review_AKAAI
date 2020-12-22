@@ -37,7 +37,7 @@ Route::get('/register', 'Admins\adminController@registerView');                 
 Route::post('/register', 'Admins\adminController@register')->name('register');  // 회원가입 Post
 
 // 관리 페이지 
-// Route::group(['middleware' => 'isAdmin'], function () {
+Route::group(['middleware' => 'isAdmin'], function () {
     // 메인화면 
     Route::get('admin/dashboard', 'Admins\adminController@adminDashboard');       //  에널리틱스 추가할까 고 민 중 . . . 
 
@@ -96,4 +96,4 @@ Route::post('/register', 'Admins\adminController@register')->name('register');  
 
     // 비정상접속 로그관리 
     Route::get('admin/log', 'Admins\logController@adminDashboard')->name('admin.log');
-// });
+});

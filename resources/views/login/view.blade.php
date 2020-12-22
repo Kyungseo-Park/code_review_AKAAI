@@ -46,10 +46,11 @@
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="이메일을 입력해주세요" value="" name="email" />
+                    <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="이메일을 입력해주세요" name="email" 
+                    value="{{ old('email') }}" required autocomplete="email" autofocus/>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="**********" value="" name="password"/>
+                    <input type="password" class="form-control" placeholder="**********" name="password"/>
                 </div>
                 <div class="form-group row pt-3">
                     <div class="col-12">

@@ -34,7 +34,7 @@ class loginController extends Controller {
                 'name' => $user->name,
                 'email' => $user->email,
                 'naver_id'=> $user->id,
-                'password'=> bcrypt('123456789')
+                'password'=> encrypt('123456789')
             ]);
 
             Auth::login($newUser);

