@@ -14,6 +14,7 @@ Laravel Version : 7.0
 
 ----------------------------
 
+### 시작  
 ```bash
 $ git clone https://github.com/Kyungseo-Park/AKAAI_code_review
 $ cd ./AKAAI_code_review
@@ -29,7 +30,7 @@ DB_DATABASE=db          // Database Name
 DB_USERNAME=username    // user name
 DB_PASSWORD=password    // user password
 ```
-### CMD or TERMINAL
+CMD or TERMINAL
 ```bash
 $ php artisan migrate:refresh --seed
 $ php artisan serve
