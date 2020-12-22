@@ -36,9 +36,14 @@ $ php artisan serve
 ```
 
 ### 접속 방법 
- - [http://localhost:8000](http://localhost:8000) 로 접속하시면 됩니다. 
-
-
-
+ - [http://localhost:8000](http://localhost:8000) 로 접속하시면 됩니다.  
+ - 관리자페이지는 [http://localhost:8000/admin](http://localhost:8000/admin) 로 접속하시면 됩니다.  
+   ID : AKKAI@kspkar.link  
+   PW : 12341234  
+  
+  
+  
 ### 2020. 12 .21(월) 코드 리뷰를 위한 준비 
- 1. 
+ 1. Seeding 추가  
+ 2. AdminAccount 추가  
+ 3. Seeding에 맞추어 파일 관련 수정  
